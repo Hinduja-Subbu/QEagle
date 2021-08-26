@@ -1,0 +1,320 @@
+{
+	"info": {
+		"_postman_id": "68c71597-6169-4bbd-8437-3aa50029c9bd",
+		"name": "Hinduja Assignments",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Service Now",
+			"item": [
+				{
+					"name": "Get All Incidents",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "jqIO1JKv4Ezc",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://dev117847.service-now.com/api/now/table/incident?sysparm_fields=number,sys_id",
+							"protocol": "https",
+							"host": [
+								"dev117847",
+								"service-now",
+								"com"
+							],
+							"path": [
+								"api",
+								"now",
+								"table",
+								"incident"
+							],
+							"query": [
+								{
+									"key": "sys_id",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "sysparm_fields",
+									"value": "number,sys_id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Incidents in XML",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "jqIO1JKv4Ezc",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/xml",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://dev117847.service-now.com/api/now/table/incident?sysparm_fields=number,sys_id&Accept=application/xml",
+							"protocol": "https",
+							"host": [
+								"dev117847",
+								"service-now",
+								"com"
+							],
+							"path": [
+								"api",
+								"now",
+								"table",
+								"incident"
+							],
+							"query": [
+								{
+									"key": "sysparm_fields",
+									"value": "number,sys_id"
+								},
+								{
+									"key": "Accept",
+									"value": "application/xml"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Incident",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "jqIO1JKv4Ezc",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"short_description\": \"Take immediate action\"\r\n}"
+						},
+						"url": {
+							"raw": "https://dev117847.service-now.com/api/now/table/incident?sysparm_fields=number,sys_id,short_description&Accept=application/xml",
+							"protocol": "https",
+							"host": [
+								"dev117847",
+								"service-now",
+								"com"
+							],
+							"path": [
+								"api",
+								"now",
+								"table",
+								"incident"
+							],
+							"query": [
+								{
+									"key": "sysparm_fields",
+									"value": "number,sys_id,short_description"
+								},
+								{
+									"key": "Accept",
+									"value": "application/xml"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete An Incident",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "jqIO1JKv4Ezc",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://dev117847.service-now.com/api/now/table/incident/46f1784ba9fe19810018aa27fbb23482",
+							"protocol": "https",
+							"host": [
+								"dev117847",
+								"service-now",
+								"com"
+							],
+							"path": [
+								"api",
+								"now",
+								"table",
+								"incident",
+								"46f1784ba9fe19810018aa27fbb23482"
+							],
+							"query": [
+								{
+									"key": "sys_id",
+									"value": "470af5afa9fe198101b324dd773ef379",
+									"disabled": true
+								},
+								{
+									"key": "sys_id",
+									"value": "47079b68a9fe198100a614a4c225c88d",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update An Incident",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "jqIO1JKv4Ezc",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"category\":\"Database\"}"
+						},
+						"url": {
+							"raw": "https://dev117847.service-now.com/api/now/table/incident/71d27e881b5a3010193f6464604bcbe1?sysparm_fields=category",
+							"protocol": "https",
+							"host": [
+								"dev117847",
+								"service-now",
+								"com"
+							],
+							"path": [
+								"api",
+								"now",
+								"table",
+								"incident",
+								"71d27e881b5a3010193f6464604bcbe1"
+							],
+							"query": [
+								{
+									"key": "sysparm_fields",
+									"value": "category",
+									"description": "DataBase"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
